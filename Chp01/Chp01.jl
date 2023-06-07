@@ -1,7 +1,7 @@
 # First either activate project or run setup.jl
 # Packages used in this chapter
 
-using BenchmarkTools, UnicodePlots, PyPlot
+using BenchmarkTools, UnicodePlots, PythonPlot
 
 # Define a function to compute the sum of the squares of (x,y)
 
@@ -128,16 +128,16 @@ t = collect(0.0:0.1:10.0);
 y =  map(x -> x*sin(3.0*x)*exp(-0.3*x), t);
 myPlot = lineplot(t, y, title = "Second Plot", name = "chp-01")
 
-using PyPlot
-plt = PyPlot   # Will get function name clashes with UnicodePlots.
+using PythonPlot
+plt = PythonPlot   # Will get function name clashes with UnicodePlots.
 
-S0  = 100;      # Spot price
-K   = 102;      # Strike price
-r   = 0.05;     # Risk free rate
-q   = 0.0;      # Dividend yield
-v   = 0.2;      # Volatility
-tma = 0.25;     # Time to maturity
-T   = 90;       # Number of time steps
+S0  = 100;         # Spot price
+K   = 102;         # Strike price
+r   = 0.05;        # Risk free rate
+q   = 0.0;         # Dividend yield
+v   = 0.2;         # Volatility
+tma = 0.25;        # Time to maturity
+T   = 90;          # Number of time steps
 
 dt  = tma/T;
 N = T + 1;
@@ -157,7 +157,7 @@ for k = 1:5
   plt.plot(x,S)
 end
 
-# Notice that the reference to the PyPlot object is in scope inside this loop
+# Notice that the reference to the PythonPlot object is in scope inside this loop
 # The same is true when passing an array into a loop
 # Confusing YES?
 #

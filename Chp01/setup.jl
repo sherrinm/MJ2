@@ -4,7 +4,7 @@
 #
 isinstalled(pkg::String) = any(x -> x.name == pkg && x.is_direct_dep, values(Pkg.dependencies()))
 
-const PKGS = ["BenchmarkTools","UnicodePlots","PyCall","PyPlot","IJulia","Pluto","PlutoUI"]
+const PKGS = ["BenchmarkTools","UnicodePlots","PythonCall","PythonPlot","IJulia","Pluto","PlutoUI"]
 
 using Pkg
 println("Installing required packages ...")
